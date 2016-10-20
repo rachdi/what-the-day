@@ -5,7 +5,46 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	
+	<div id="head">
+		
+	</div>
+	<div id="mid">
+	<h1>jours</h1>
+		<input type="number" id="days">
+		<h1>Mois</h1>
+		<select name="month" id="month">
+			<option value="1">Janvier</option>
+			<option value="2">Février</option>
+			<option value="3">Mars</option>
+			<option value="4">Avril</option>
+			<option value="5">Mai</option>
+			<option value="6">Juin</option>
+			<option value="7">juillet</option>
+			<option value="8">Aout</option>
+			<option value="9">Septembre</option>
+			<option value="10">Octobre</option>
+			<option value="11">Novembre</option>
+			<option value="12">Décembre</option>
+		</select>
+		<h1>Années</h1>
+		<input type="number" id="year">
+	</div>
+	<div id="checkLabel">
+		<h1>CHECK HERE</h1>
+		<button label="Vérifier">Vérifier</button>
+	</div>
+	<div id="message" class="error"> error
+		<!-- changez la bordure du champs correspondant en rouge -->
+	</div> 
+	<div class="overlay">
+		qui occupe tout l'écran et afficher en taille de texte de 100pt le jour correspondant ainsi qu'un 
+	</div>
+	<div id="foot">
+		<button id="restart" label="Recommencer">Restart</button>
+	</div>
+
+
+
 
 	<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
 	<script type="text/javascript" src="node_modules/moment/moment.js"></script>
