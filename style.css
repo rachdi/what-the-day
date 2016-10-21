@@ -1,3 +1,14 @@
 body{
 	background-color: grey;
 }
+#message{
+	background-color: red;
+}
+#restart{
+	text-align: center;
+	width: 60%;
+	height: 60%;
+}
+#whatAday{
+	font-size: 100px;
+}
