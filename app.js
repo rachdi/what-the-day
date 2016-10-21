@@ -1,7 +1,6 @@
 $(document).ready(function(){
-
-
-
+var localLocale = moment();
+localLocale.locale('fr');
 	var app = {
 		jour:null,
 		année:null,
@@ -17,31 +16,37 @@ $(document).ready(function(){
 			$('#vérifier').on('click',app.whatAday);
 		},
 		day: function(){
-			jour = console.log($('#days').val());
+			app.jour = $('#days').val();
 			
 		},
 		month: function(){
-			mois = console.log($('#month').val());
+			app.mois = $('#month').val();
 			
 		},
 		year: function(){
-			annee = console.log($('#year').val());
+			app.année = $('#year').val();
 			
 		},
 		vérif: function(){
-
+			app.result = moment({year:app.année, month: app.mois, day: app.jour}).format('dddd');
+			
+			
 		},
 		whatAday: function(){
 			app.day();
 			app.month();
 			app.year();
-			$('#whatAday').text(jour + mois + annee);
+			app.vérif();
+			$('#whatAday').text(app.result);
+
 
 		}
 
 	};
-
+	moment.locale('fr');
 	app.init();
 
 
 });
+
+
