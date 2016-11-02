@@ -12,53 +12,53 @@ $(document).ready(function(){
 
 		},
 		listener: function(){
-			$('#vérifier').on('click',app.whatAday);
-			$('#restart').on('click',app.init);
+			$('#vérifier').on('click',this.whatAday.bind(this));
+			$('#restart').on('click',this.init.bind(this));
 
 		},
 		day: function(){
-			app.jour = $('#days').val();
-			if(app.jour <1){
+			this.jour = $('#days').val();
+			if(this.jour <1){
 				$('#head').append('<div id="message" class="error">Try again</div>');
 				$('#days').css('border','red solid 3px');
-				app.init();
+				this.init();
 			}
-			if(app.jour >31){
+			if(this.jour >31){
 				$('#days').css('border','red solid 3px');
-				app.init();
+				this.init();
 			} else {
 				$('#reset').hide()
 				$('body').append('<div class="overlay"><h1 id="whatAday"></h1><button id="restart" label="Recommencer">Restart</button></div>');
 			}
 		},
 		month: function(){
-			app.mois = $('#month').val();
+			this.mois = $('#month').val();
 			
 		},
 		year: function(){
-			app.année = $('#year').val();
-			if(app.année <1){
+			this.année = $('#year').val();
+			if(this.année <1){
 				$('#year').css('border','red solid 3px');
-				app.init();
+				this.init();
 			}
 			
 		},
 		vérif: function(){
-			app.result = moment({year:app.année, month: app.mois, day: app.jour}).format('dddd');
+			this.result = moment({year:this.année, month: this.mois, day: this.jour}).format('dddd');
 
 		},
 		whatAday: function(){
-			app.day();
-			app.month();
-			app.year();
-			app.vérif();
-			$('#whatAday').text(app.result);
+			this.day();
+			this.month();
+			this.year();
+			this.vérif();
+			$('#whatAday').text(this.result);
 
 		},
 		reset: function(){
 			$('#reset').show()
 			$('.overlay').hide()
-			app.init();
+			this.init();
 		}
 	};
 	app.init();
